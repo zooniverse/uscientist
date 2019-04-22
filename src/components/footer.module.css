@@ -1,0 +1,21 @@
+.footer {
+  background: white;
+  height: 15rem;
+  padding: 2rem 4rem;
+  text-align: center;
+  width: auto;
+}
+
+.footer span, a {
+  color: #001133;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.89px;
+  line-height: 18px;
+  margin: 0.75rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
