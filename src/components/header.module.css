@@ -1,0 +1,26 @@
+.header {
+  position: relative
+}
+
+.upperDiv {
+  background: #00246D;
+  display: flex;
+  height: 2.75rem;
+  padding: 0.75rem;
+}
+
+.lowerDiv {
+  background: #001133;
+  height: 2.75rem;
+}
+
+.centeredDiv {
+  background: transparent;
+  display: flex;
+  alignItems: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
