@@ -1,0 +1,46 @@
+.general {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.general h3 {
+  color: #E0FF3D;
+  font-family: Poppins;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: -1.7px;
+  line-height: 52px;
+}
+
+.general h5 {
+  color: #E0FF3D;
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  width: 35rem;
+}
+
+.general span {
+  color: #E0FF3D;
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 1rem;
+}
+
+.general span:first-child {
+  display: inline-block;
+}
+
+.general button {
+  display: block;
+  margin: auto;
+}
+
+.column {
+  column-count: 2;
+  margin: 1.5rem 0;
+  width: 45rem;
+}

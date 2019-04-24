@@ -20,7 +20,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "divider.png" }) {
       childImageSharp {
-        fixed(width: 200) {
+        fixed(width: 149) {
           ...GatsbyImageSharpFixed
         }
       }
