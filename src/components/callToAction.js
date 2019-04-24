@@ -13,7 +13,7 @@ const CallToAction = () => (
     </span>
     <div>
       <button className="solid-button"><a href='https://www.galaxyzoo.org'>Galaxyzoo.org</a></button>
-      <button className="hollow-button"><a>Share this project</a></button>
+      <button className="hollow-button"><a href='https://www.zoonvierse.org'>Share this project</a></button>
     </div>
   </div>
 )
