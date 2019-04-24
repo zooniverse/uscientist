@@ -2,15 +2,6 @@
   color: red;
 }
 
-.recent h3 {
-  color: #E0FF3D;
-  font-family: Poppins;
-  font-size: 45px;
-  font-weight: bold;
-  letter-spacing: -1.7px;
-  text-align: center;
-}
-
 .recent button {
   display: block;
   height: 3.5rem;
@@ -20,18 +11,6 @@
 
 .recent button a {
   font-size: 16px;
-}
-
-.content {
-  color: #E0FF3D;
-  display: block;
-  font-family: 'IBM Plex Mono';
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 24px;
-  margin: 2rem auto;
-  text-align: center;
-  width: 35rem;
 }
 
 .subjects {

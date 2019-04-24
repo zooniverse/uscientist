@@ -9,11 +9,11 @@ const General = ({ data }) => {
       query={query}
       render={data => (
         <div className={generalStyles.general}>
-          <h3>What is Zooniverse?</h3>
-          <h5>
+          <h3 className='sub-header'>What is Zooniverse?</h3>
+          <span className='descriptor'>
             Zooniverse is the world's largest people-powered research
             platform. What does that mean? Lorem ipsum dolor sit.
-          </h5>
+          </span>
           <Img fixed={data.file.childImageSharp.fixed}/>
           <div className={generalStyles.column}>
             <span>

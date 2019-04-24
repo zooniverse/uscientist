@@ -45,3 +45,25 @@
   font-weight: bold;
   text-decoration: none;
 }
+
+.sub-header {
+  color: #E0FF3D;
+  font-family: Poppins;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: -1.7px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.descriptor {
+  color: #E0FF3D;
+  display: block;
+  font-family: 'IBM Plex Mono';
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  margin: 2rem auto;
+  text-align: center;
+  width: 35rem;
+}

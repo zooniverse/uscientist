@@ -4,15 +4,6 @@
     flex-direction: column;
 }
 
-.general h3 {
-  color: #E0FF3D;
-  font-family: Poppins;
-  font-size: 45px;
-  font-weight: bold;
-  letter-spacing: -1.7px;
-  line-height: 52px;
-}
-
 .general h5 {
   color: #E0FF3D;
   font-family: "IBM Plex Mono";

@@ -5,8 +5,8 @@ const placeholder = ["SBJ.26440667", "SBJ.26440667", "SBJ.26440667"];
 
 const Recent = () => (
     <div className={recentStyles.recent}>
-      <h3>Recent galaxies</h3>
-      <span className={recentStyles.content}>
+      <h3 className='sub-header'>Recent galaxies</h3>
+      <span className='descriptor'>
         People just like you have been classifying galaxies from U!Scientist at
         the Adler as well as online on Galaxy Zoo.
       </span>

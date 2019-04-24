@@ -5,6 +5,7 @@ import CallToAction from "../components/CallToAction"
 import Divider from "../components/divider"
 import General from "../components/general"
 import Recent from "../components/recent"
+import Data from "../components/data"
 
 const IndexPage = () => (
   <Layout>
@@ -13,6 +14,7 @@ const IndexPage = () => (
       <Divider />
       <Recent />
       <Divider />
+      <Data />
       <Divider />
       <General />
     </div>
