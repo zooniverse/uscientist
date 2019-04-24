@@ -1,0 +1,39 @@
+.solid-button {
+  background: #E0FF3D;
+  border: 1px solid #E0FF3D;
+  cursor: pointer;
+  height: 2.75rem;
+  letter-spacing: 2.5px;
+  width: 11.75rem;
+  text-transform: uppercase;
+}
+
+.solid-button a {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.solid-button:hover {
+  background: #F3AB91;
+  border: 1px solid #F3AB91;
+}
+
+.hollow-button {
+  background: transparent;
+  border: 1px solid #E0FF3D;
+  cursor: pointer;
+  height: 2.75rem;
+  letter-spacing: 2.5px;
+  width: 11.75rem;
+  text-transform: uppercase;
+}
+
+.hollow-button a {
+  color: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
