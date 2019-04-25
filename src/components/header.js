@@ -36,7 +36,7 @@ export const query = graphql`
         }
       }
     }
-    image: file(relativePath: { eq: "zooniverse-logo-white.png" }) {
+    image: file(relativePath: { eq: "zooniverse-word-white.png" }) {
       childImageSharp {
         fixed(height: 10) {
           ...GatsbyImageSharpFixed
