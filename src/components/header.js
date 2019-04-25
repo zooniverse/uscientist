@@ -2,13 +2,18 @@ import React from "react"
 import Img from "gatsby-image"
 import headerStyles from "./header.module.css"
 import { StaticQuery, graphql } from "gatsby"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
 
-const Header = () => {
+const Header = ({ siteTitle }) => {
   return (
     <StaticQuery
       query={query}
       render={data => (
         <header className={headerStyles.header}>
+          <Helmet>
+            <title>{siteTitle}</title> />
+          </Helmet>
           <div>
             <div className={headerStyles.upperDiv}>
               <Img style={{ margin: `auto 0.5rem` }} fixed={data.logo.childImageSharp.fixed} />
@@ -26,6 +31,8 @@ const Header = () => {
     />
   );
 };
+
+
 
 export const query = graphql`
   query {
@@ -52,5 +59,13 @@ export const query = graphql`
     }
   }
 `;
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
+}
 
 export default Header

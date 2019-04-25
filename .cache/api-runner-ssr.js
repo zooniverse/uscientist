@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('/Users/wgranger/Zooniverse/touch-table-intermediate/node_modules/gatsby-plugin-favicon/gatsby-ssr'),
+      options: {"plugins":[],"logo":"./src/images/yellow-star.png"},
+    },{
       plugin: require('/Users/wgranger/Zooniverse/touch-table-intermediate/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
