@@ -8,6 +8,7 @@ import Recent from "../components/recent"
 import Data from "../components/data"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import yellowLogo from "../images/yellow-logo.png";
 
 const IndexPage = ({ data }) => {
   return (
@@ -16,10 +17,7 @@ const IndexPage = ({ data }) => {
       render={data => (
         <Layout>
           <div style={{ background: `#001133`, padding: `15% 15% 5% 15%`, position: `relative` }}>
-            <Img
-              fixed={data.file.childImageSharp.fixed}
-              style={{ position: `absolute`, right: 0, top: 0, marginRight: `15%` }}
-            />
+            <img alt="Large U!Scientist Logo" className="large-logo" src={yellowLogo} />
             <Img
               fixed={data.image.childImageSharp.fixed}
               style={{ position: `absolute`, left: 0, top: 0, margin: `12% 0 0 10%` }}
@@ -27,6 +25,10 @@ const IndexPage = ({ data }) => {
             <Img
               fixed={data.star.childImageSharp.fixed}
               style={{ position: `absolute`, left: 0, marginTop: `12%` }}
+            />
+            <Img
+              fixed={data.spiral.childImageSharp.fixed}
+              style={{ position: `absolute`, right: 0, marginTop: `80%` }}
             />
             <CallToAction />
             <Divider />
@@ -52,13 +54,6 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "yellow-logo.png" }) {
-      childImageSharp {
-        fixed(width: 624) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
     image: file(relativePath: { eq: "yellow-star.png" }) {
       childImageSharp {
         fixed(height: 44) {

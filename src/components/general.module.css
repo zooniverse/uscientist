@@ -33,5 +33,6 @@
 .column {
   column-count: 2;
   margin: 1.5rem 0;
+  max-width: 80vw;
   width: 45rem;
 }

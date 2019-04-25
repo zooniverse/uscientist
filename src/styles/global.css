@@ -26,6 +26,7 @@
   cursor: pointer;
   height: 2.75rem;
   letter-spacing: 2.5px;
+  max-width: 50vw;
   width: 11.75rem;
   text-transform: uppercase;
 }
@@ -64,6 +65,7 @@
   font-weight: bold;
   line-height: 24px;
   margin: 2rem auto;
+  max-width: 60vw;
   text-align: center;
   width: 35rem;
 }
