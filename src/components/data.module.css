@@ -1,0 +1,39 @@
+.stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stats h5 {
+  color: #A3DDEE;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.stats span {
+  color: #001133;
+  display: block;
+  font-family: Poppins;
+  font-size: 80px;
+  font-weight: bold;
+  margin: 2rem 0rem 3rem 0rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: -1px 1px 0 #E0FF3D,
+              1px 1px 0 #E0FF3D,
+              1px -1px 0 #E0FF3D,
+              -1px -1px 0 #E0FF3D;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.buttons button {
+  margin: 0 1rem;
+}

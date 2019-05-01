@@ -1,0 +1,39 @@
+.recent {
+  color: red;
+}
+
+.recent button {
+  display: block;
+  height: 3.5rem;
+  margin: 3rem auto;
+  width: 28rem;
+}
+
+.recent button a {
+  font-size: 16px;
+}
+
+.subjects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.subject {
+  display: flex;
+  flex-direction: column;
+}
+
+.subject div {
+  border: 1px solid #E1E3E6;
+  border-radius: 0.2rem;
+  height: 22vw;
+  width: 22vw;
+}
+
+.subject span {
+  color: #F3AB91;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: bold;
+}

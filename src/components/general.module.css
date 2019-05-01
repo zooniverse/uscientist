@@ -1,0 +1,38 @@
+.general {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.general h5 {
+  color: #E0FF3D;
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  width: 35rem;
+}
+
+.general span {
+  color: #E0FF3D;
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 0.4rem;
+}
+
+.general span:first-child {
+  display: inline-block;
+}
+
+.general button {
+  display: block;
+  margin: auto;
+}
+
+.column {
+  column-count: 2;
+  margin: 1.5rem 0;
+  max-width: 80vw;
+  width: 45rem;
+}

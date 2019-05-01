@@ -1,0 +1,71 @@
+.solid-button {
+  background: #E0FF3D;
+  border: 1px solid #E0FF3D;
+  cursor: pointer;
+  height: 2.75rem;
+  letter-spacing: 2.5px;
+  width: 11.75rem;
+  text-transform: uppercase;
+}
+
+.solid-button:hover {
+  background: #F3AB91;
+  border: 1px solid #F3AB91;
+}
+
+.solid-button a {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hollow-button {
+  background: transparent;
+  border: 1px solid #E0FF3D;
+  cursor: pointer;
+  height: 2.75rem;
+  letter-spacing: 2.5px;
+  max-width: 50vw;
+  width: 11.75rem;
+  text-transform: uppercase;
+}
+
+.hollow-button:hover {
+  background: #E0FF3D;
+}
+
+.hollow-button:hover a {
+  color: black;
+}
+
+.hollow-button a {
+  color: white;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sub-header {
+  color: #E0FF3D;
+  font-family: Poppins;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: -1.7px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.descriptor {
+  color: #E0FF3D;
+  display: block;
+  font-family: 'IBM Plex Mono';
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  margin: 2rem auto;
+  max-width: 60vw;
+  text-align: center;
+  width: 35rem;
+}

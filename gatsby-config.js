@@ -1,16 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `U!Scientist`,
+    description: `The Zooniverse touch table experience at the Adler Planetarium.`,
+    author: `Zooniverse`,
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Poppins']
+          families: ['Poppins', 'IBM Plex Mono']
         }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/images/yellow-star.png"
       }
     },
     `gatsby-plugin-react-helmet`,
