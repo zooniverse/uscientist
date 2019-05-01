@@ -9,6 +9,9 @@ import Data from "../components/data"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import yellowLogo from "../images/yellow-logo.png";
+import spiral from "../images/background-spiral.png";
+import smallStar from "../images/yellow-star.png";
+import backgroundStar from "../images/background-star.png";
 
 const IndexPage = ({ data }) => {
   return (
@@ -16,20 +19,12 @@ const IndexPage = ({ data }) => {
       query={query}
       render={data => (
         <Layout>
-          <div style={{ background: `#001133`, padding: `15% 15% 5% 15%`, position: `relative` }}>
+          <div className="layout-div">
             <img alt="Large U!Scientist Logo" className="large-logo" src={yellowLogo} />
-            <Img
-              fixed={data.image.childImageSharp.fixed}
-              style={{ position: `absolute`, left: 0, top: 0, margin: `12% 0 0 10%` }}
-            />
-            <Img
-              fixed={data.star.childImageSharp.fixed}
-              style={{ position: `absolute`, left: 0, marginTop: `12%` }}
-            />
-            <Img
-              fixed={data.spiral.childImageSharp.fixed}
-              style={{ position: `absolute`, right: 0, marginTop: `80%` }}
-            />
+            <img alt="Spiral Background Image" className="spiral-background" src={spiral} />
+            <img alt="Small Background Star" className="small-star" src={smallStar} />
+            <img alt="Background Star" className="background-star" src={backgroundStar} />
+            <img alt="Spiral Background Image" className="spiral-background" src={spiral} />
             <CallToAction />
             <Divider />
             <Recent />

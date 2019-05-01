@@ -1,6 +1,8 @@
 .callToAction {
   max-width: 75vw;
+  position: relative;
   width: 34rem;
+  z-index: 1;
 }
 
 .callToAction h1 {
@@ -33,4 +35,38 @@
 
 .callToAction button {
   margin: 0 1rem 1rem 0;
+}
+
+.callToAction span a {
+  color: #F3AB91;
+  cursor: pointer;
+  display: initial;
+  font-family: 'IBM Plex Mono';
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  margin-left: 0.5rem;
+  text-transform: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .callToAction {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .callToAction h1 {
+    max-width: 100%;
+  }
+
+  .callToAction span {
+    display: block;
+    margin: 0 0 4rem 6rem;
+  }
 }

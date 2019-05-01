@@ -1,0 +1,34 @@
+@media only screen and (max-width: 768px) {
+  .solid-button {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hollow-button {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .large-logo {
+    display: none;
+  }
+
+  .layout-div {
+    padding: 4rem 2rem;
+  }
+
+  .spiral-background {
+    height: 10rem;
+    margin-top: 120%;
+  }
+
+  .small-star {
+    left: -1rem;
+    margin: 0;
+  }
+
+  .background-star {
+    height: 10rem;
+    margin-top: 50%;
+  }
+}

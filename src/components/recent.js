@@ -11,8 +11,8 @@ const Recent = () => (
         the Adler as well as online on Galaxy Zoo.
       </span>
       <div className={recentStyles.subjects}>
-        {placeholder.map(image =>
-            <div className={recentStyles.subject}>
+        {placeholder.map((image, i) =>
+            <div key={i} className={recentStyles.subject}>
               <div />
               <span>{image}</span>
             </div>

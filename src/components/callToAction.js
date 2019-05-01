@@ -9,9 +9,9 @@ const CallToAction = () => (
     </h2>
     <span>
       You can keep science-ing on your mobile device or at home with
-      Galaxy Zoo, a project from Zooniverse. Check it out!
+      <a href="https://www.galaxyzoo.org">Galaxy Zoo</a>, a project from Zooniverse. Check it out!
     </span>
-    <div>
+    <div className={callToActionStyles.buttons}>
       <button className="solid-button"><a href='https://www.galaxyzoo.org'>Galaxyzoo.org</a></button>
       <button className="hollow-button"><a href='https://www.zoonvierse.org'>Share this project</a></button>
     </div>

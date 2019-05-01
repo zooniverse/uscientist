@@ -69,3 +69,9 @@
   text-align: center;
   width: 35rem;
 }
+
+.layout-div {
+  background: #001133;
+  padding: 15% 15% 5% 15%;
+  position: relative;
+}
