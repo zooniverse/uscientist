@@ -31,9 +31,43 @@
   width: 22vw;
 }
 
-.subject span {
+.subject a {
   color: #F3AB91;
   font-family: Poppins;
   font-size: 16px;
   font-weight: bold;
+  text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+  .recent h3 {
+    text-align: left;
+    margin: 0;
+    max-width: 60vw;
+  }
+
+  .recent span {
+    text-align: left;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .subjects {
+    flex-wrap: wrap;
+    max-width: 85vw;
+  }
+
+  .subjects .subject:first-child div {
+    height: 85vw;
+    width: 85vw;
+  }
+
+  .subjects .subject:nth-child(2) div {
+    height: 40vw;
+    width: 40vw;
+  }
+
+  .subjects .subject:nth-child(3) div {
+    height: 40vw;
+    width: 40vw;
+  }
 }

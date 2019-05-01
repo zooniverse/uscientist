@@ -21,10 +21,10 @@ const IndexPage = ({ data }) => {
         <Layout>
           <div className="layout-div">
             <img alt="Large U!Scientist Logo" className="large-logo" src={yellowLogo} />
-            <img alt="Spiral Background Image" className="spiral-background" src={spiral} />
+            <img alt="Spiral Background" className="spiral-background" src={spiral} />
             <img alt="Small Background Star" className="small-star" src={smallStar} />
             <img alt="Background Star" className="background-star" src={backgroundStar} />
-            <img alt="Spiral Background Image" className="spiral-background" src={spiral} />
+            <img alt="Spiral Background" className="spiral-background" src={spiral} />
             <CallToAction />
             <Divider />
             <Recent />

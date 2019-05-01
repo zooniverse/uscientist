@@ -14,7 +14,7 @@ const Recent = () => (
         {placeholder.map((image, i) =>
             <div key={i} className={recentStyles.subject}>
               <div />
-              <span>{image}</span>
+              <a href="#">{image}</a>
             </div>
         )}
       </div>
