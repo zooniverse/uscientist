@@ -36,4 +36,12 @@
     margin-left: 0;
     text-align: left;
   }
+
+  .icons-image {
+    display: none;
+  }
+
+  .icons-image-mobile {
+    display: block;
+  }
 }

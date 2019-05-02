@@ -24,3 +24,14 @@
   margin-top: 12%;
   position: absolute;
 }
+
+.icons-image {
+  margin: 1rem auto;
+  width: 20rem;
+}
+
+.icons-image-mobile {
+  display: none;
+  height: max-content;
+  width: 2rem;
+}

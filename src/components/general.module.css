@@ -32,7 +32,31 @@
 
 .column {
   column-count: 2;
-  margin: 1.5rem 0;
+  padding: 1.5rem 0;
   max-width: 80vw;
   width: 45rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .general {
+    align-items: flex-start;
+  }
+
+  .general span {
+    margin: 0 0 2rem 0;
+  }
+
+  .column {
+    column-count: 1;
+    padding: 0 2rem 2rem 4rem;
+  }
+
+  .content {
+    flex-direction: row;
+  }
 }
