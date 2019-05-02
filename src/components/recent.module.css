@@ -53,12 +53,16 @@
 
   .subjects {
     flex-wrap: wrap;
-    max-width: 85vw;
+    width: 85vw;
+  }
+
+  .subjects {
+    justify-content: flex-start;
   }
 
   .subjects .subject:first-child div {
-    height: 85vw;
-    width: 85vw;
+    height: 82vw;
+    width: 82vw;
   }
 
   .subjects .subject:nth-child(2) div {
@@ -70,4 +74,9 @@
     height: 40vw;
     width: 40vw;
   }
+
+  .subjects .subject:nth-child(3) {
+    margin-left: 2vw;
+  }
+
 }

@@ -22,7 +22,7 @@ const Data = () => (
       </div>
     </div>
     <div className={dataStyles.buttons}>
-      <button className='hollow-button'>
+      <button className='solid-button'>
         <a href='https://www.galaxyzoo.org'>galaxyzoo.org</a>
       </button>
       <button className='hollow-button'>

@@ -14,7 +14,7 @@ const Recent = () => (
         {placeholder.map((image, i) =>
             <div key={i} className={recentStyles.subject}>
               <div />
-              <a href="#">{image}</a>
+              <a href="https://www.zooniverse.org">{image}</a>
             </div>
         )}
       </div>
