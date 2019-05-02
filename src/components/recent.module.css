@@ -78,4 +78,8 @@
   .subjects .subject:nth-child(3) {
     margin-left: 2vw;
   }
+
+  .recent button {
+    margin: 1.5rem auto;
+  }
 }

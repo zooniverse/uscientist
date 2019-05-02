@@ -19,7 +19,7 @@
 
   .spiral-background {
     height: 10rem;
-    margin-top: 120%;
+    margin-top: 60vh;
   }
 
   .small-star {
@@ -29,7 +29,7 @@
 
   .background-star {
     height: 10rem;
-    margin-top: 50%;
+    margin-top: 16rem;
   }
 
   .descriptor {
@@ -42,6 +42,24 @@
   }
 
   .icons-image-mobile {
+    display: block;
+  }
+
+  .small-star-desktop {
+    display: none;
+  }
+
+  .zooniverse-background-image {
+    margin-bottom: 16rem;
+    left: -7.5rem;
+    width: 15rem;
+  }
+
+  .background-star-right {
+    display: block;
+  }
+
+  .background-spiral-left {
     display: block;
   }
 }
