@@ -24,7 +24,8 @@
   },
   "devDependencies": {
     "panoptes-client": "^2.12.1",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "pusher-js": "^4.4.0"
   },
   "keywords": [
     "gatsby"

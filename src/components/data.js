@@ -1,9 +1,6 @@
 import React from "react"
-<<<<<<< HEAD
 import { OutboundLink } from "gatsby-plugin-google-analytics"
-=======
 import PropTypes from "prop-types"
->>>>>>> Grab Stats from statsApi
 import dataStyles from "./data.module.css"
 
 const Data = ({ retiredCount, tableCount, totalDaily }) => (

@@ -1,10 +1,11 @@
 import React from "react"
+import PropTypes from "prop-types"
 import recentStyles from "./recent.module.css"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const placeholder = ["SBJ.26440667", "SBJ.26440667", "SBJ.26440667"];
 
-const Recent = () => (
+const Recent = ({ subjects }) => (
     <div className={recentStyles.recent}>
       <h3 className='sub-header'>Recent galaxies</h3>
       <span className='descriptor'>
@@ -25,5 +26,13 @@ const Recent = () => (
       </button>
     </div>
 );
+
+Recent.defaultProps = {
+  subjects: []
+}
+
+Recent.propTypes = {
+  subjects: PropTypes.arrayOf(PropTypes.object)
+}
 
 export default Recent;
