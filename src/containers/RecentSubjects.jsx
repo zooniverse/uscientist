@@ -1,7 +1,7 @@
-import React from "react";
-import Recent from "../components/recent";
+import React from "react"
+import Recent from "../components/recent"
 import Pusher from "pusher-js"
-import apiClient from "panoptes-client/lib/api-client";
+import apiClient from "panoptes-client/lib/api-client"
 import { config } from "../config"
 
 class RecentSubjects extends React.Component {
@@ -23,11 +23,14 @@ class RecentSubjects extends React.Component {
   }
 
   getSubject(id) {
-    const subjects = this.state.recentSubjects.slice();
+    const subjects = this.state.subjects.slice();
     apiClient.type("subjects").get({ id })
       .then(([subject]) => {
-        subjects.push(subject);
-        this.setState({ subjects });
+        console.log(subject);
+        subjects.unshift(subject);
+        const threeSubjects = subjects.slice(0,3);
+        console.log(subjects);
+        this.setState({ subjects: threeSubjects });
       })
   }
 

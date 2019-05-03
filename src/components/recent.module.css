@@ -23,10 +23,11 @@
   flex-direction: column;
 }
 
-.subject div {
+.subject img {
   border: 1px solid #E1E3E6;
   border-radius: 0.2rem;
   height: 22vw;
+  margin-bottom: 0.25rem;
   width: 22vw;
 }
 

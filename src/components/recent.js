@@ -2,8 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import recentStyles from "./recent.module.css"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
-
-const placeholder = ["SBJ.26440667", "SBJ.26440667", "SBJ.26440667"];
+import { getSubjectLocation } from "../lib/get-subject-location"
 
 const Recent = ({ subjects }) => (
     <div className={recentStyles.recent}>
@@ -14,12 +13,20 @@ const Recent = ({ subjects }) => (
         <OutboundLink className="peach-link" href="https://www.galaxyzoo.org">Galaxy Zoo.</OutboundLink>
       </span>
       <div className={recentStyles.subjects}>
-        {placeholder.map((image, i) =>
+        {subjects.map((subject, i) => {
+          const location = getSubjectLocation(subject);
+          return (
             <div key={i} className={recentStyles.subject}>
+<<<<<<< HEAD
               <div />
               <OutboundLink href="https://www.zooniverse.org">{image}</OutboundLink>
+=======
+              <img src={location.src} />
+              <span>{subject.id}</span>
+>>>>>>> Display Recent Subjects
             </div>
-        )}
+          );
+        })}
       </div>
       <button className='hollow-button'>
         <OutboundLink href='https://www.galaxyzoo.org'>more recent galaxies</OutboundLink>
