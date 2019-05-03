@@ -23,6 +23,7 @@
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
+    "panoptes-client": "^2.12.1",
     "prettier": "^1.17.0"
   },
   "keywords": [

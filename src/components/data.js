@@ -1,8 +1,12 @@
 import React from "react"
+<<<<<<< HEAD
 import { OutboundLink } from "gatsby-plugin-google-analytics"
+=======
+import PropTypes from "prop-types"
+>>>>>>> Grab Stats from statsApi
 import dataStyles from "./data.module.css"
 
-const Data = () => (
+const Data = ({ retiredCount, tableCount, totalDaily }) => (
   <div className={dataStyles.data}>
     <h3 className='sub-header'>Even more data</h3>
     <span className='descriptor'>
@@ -13,11 +17,11 @@ const Data = () => (
     <div className={dataStyles.stats}>
       <div>
         <h5>total classifications today</h5>
-        <span>42,629</span>
+        <span>{totalDaily.toLocaleString()}</span>
         <h5>galaxies retired</h5>
-        <span>20</span>
+        <span>{retiredCount.toLocaleString()}</span>
         <h5>u!scientist classifications today</h5>
-        <span>12,054</span>
+        <span>{tableCount.toLocaleString()}</span>
       </div>
       <div>
         <h5>Countries participating today</h5>
@@ -33,5 +37,17 @@ const Data = () => (
     </div>
   </div>
 )
+
+Data.defaultProps = {
+  retiredCount: 0,
+  tableCount: 0,
+  totalDaily: 0
+}
+
+Data.propTypes = {
+  retiredCount: PropTypes.number,
+  tableCount: PropTypes.number,
+  totalDaily: PropTypes.number
+}
 
 export default Data;
