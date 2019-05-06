@@ -1,8 +1,9 @@
 import React from "react"
-import Recent from "../components/recent"
 import Pusher from "pusher-js"
+import PropTypes from "prop-types"
 import apiClient from "panoptes-client/lib/api-client"
 import talkClient from 'panoptes-client/lib/talk-client';
+import Recent from "../components/recent"
 import { config } from "../config"
 
 class RecentSubjects extends React.Component {
@@ -69,9 +70,22 @@ class RecentSubjects extends React.Component {
 
   render() {
     return (
-      <Recent subjects={this.state.subjects} />
+      <Recent
+        project={this.props.project}
+        subjects={this.state.subjects}
+      />
     );
   }
+}
+
+RecentSubjects.defaultProps = {
+  project: null
+}
+
+RecentSubjects.propTypes = {
+  project: PropTypes.shape({
+    slug: PropTypes.string
+  })
 }
 
 export default RecentSubjects;

@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { config } from "../config";
 import recentStyles from "./recent.module.css"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 import { getSubjectLocation } from "../lib/get-subject-location"
 
-const Recent = ({ subjects }) => (
+const Recent = ({ project, subjects }) => (
     <div className={recentStyles.recent}>
       <h3 className='sub-header'>Recent galaxies</h3>
       <span className='descriptor'>
@@ -21,7 +22,13 @@ const Recent = ({ subjects }) => (
               <OutboundLink href="https://www.zooniverse.org">{image}</OutboundLink>
               <img src={location.src} />
               <img alt="Recently Classified Galaxy" src={location.src} />
-              <span>{subject.id}</span>
+              <a
+                href={`${config.root}projects/${project.slug}/talk/subjects/${subject.id}`}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                subject ID: {subject.id}
+              </a>
             </div>
           );
         })}
@@ -33,10 +40,14 @@ const Recent = ({ subjects }) => (
 );
 
 Recent.defaultProps = {
+  project: null,
   subjects: []
 }
 
 Recent.propTypes = {
+  project: PropTypes.shape({
+    slug: PropTypes.string
+  }),
   subjects: PropTypes.arrayOf(PropTypes.object)
 }
 

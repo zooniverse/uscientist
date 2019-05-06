@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types"
 import Data from "../components/data";
 import statsClient from "panoptes-client/lib/stats-client";
-import apiClient from "panoptes-client/lib/api-client";
 import { config } from "../config";
 
 class RecentData extends React.Component {
@@ -16,18 +16,8 @@ class RecentData extends React.Component {
   }
 
   componentDidMount() {
-    this.setRetiredCount();
     this.setTotalCount();
     this.setTableCount();
-  }
-
-  setRetiredCount() {
-    apiClient.type("projects").get({ id: config.projectID })
-      .then(([project]) => {
-        if (project && project.retired_subjects_count) {
-          this.setState({ retiredCount: project.retired_subjects_count });
-        }
-      });
   }
 
   setTotalCount() {
@@ -63,12 +53,20 @@ class RecentData extends React.Component {
   render() {
     return (
       <Data
-        retiredCount={this.state.retiredCount}
+        retiredCount={this.props.retiredCount}
         tableCount={this.state.tableCount}
         totalDaily={this.state.totalDaily}
       />
     );
   }
+}
+
+RecentData.defaultProps = {
+  retiredCount: 0
+}
+
+RecentData.propTypes = {
+  retiredCount: PropTypes.number
 }
 
 export default RecentData;

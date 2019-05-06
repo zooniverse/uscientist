@@ -13,10 +13,12 @@ function locationMatch(regex) {
 
 const baseConfig = {
   development: {
+    root: "https://www.master.pfe-preview.zooniverse.org/",
     projectID: "1857",
     tableWorkflowID: "3251"
   },
   production: {
+    root: "https://www.zooniverse.org/",
     projectID: "5733",
     tableWorkflowID: "6527"
   }
