@@ -14,7 +14,7 @@
   }
 
   .layout-div {
-    padding: 4rem 2rem;
+    padding: 3rem 1.5rem;
   }
 
   .spiral-background {
@@ -33,8 +33,11 @@
   }
 
   .descriptor {
+    font-size: 14px;
+    line-height: 22px;
     margin-left: 0;
     text-align: left;
+    max-width: 70vw;
   }
 
   .icons-image {
@@ -61,5 +64,9 @@
 
   .background-spiral-left {
     display: block;
+  }
+
+  .sub-header {
+    text-align: left;
   }
 }
