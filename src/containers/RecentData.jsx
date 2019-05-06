@@ -9,7 +9,6 @@ class RecentData extends React.Component {
     super(props);
 
     this.state = {
-      retiredCount: 0,
       tableCount: 0,
       totalDaily: 0
     };
