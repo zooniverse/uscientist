@@ -9,6 +9,7 @@ class RecentSubjects extends React.Component {
   constructor(props) {
     super(props);
 
+    this.subjectQueue = [];
     this.state = {
       subjects: []
     }
@@ -23,6 +24,18 @@ class RecentSubjects extends React.Component {
     channel.bind('classification', this.processClassification);
 
     this.getTalkSubjects();
+    this.interval = setInterval(() => this.setSubjects(), 15000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  setSubjects() {
+    const subjects = this.subjectQueue.slice().concat(this.state.subjects);
+    const threeSubjects = subjects.slice(0,3);
+    this.setState({ subjects: threeSubjects });
+    this.subjectQueue = [];
   }
 
   getTalkSubjects() {
@@ -41,13 +54,11 @@ class RecentSubjects extends React.Component {
   }
 
   getSubject(id) {
-    const subjects = this.state.subjects.slice();
     apiClient.type("subjects").get({ id })
       .then(([subject]) => {
-        subjects.unshift(subject);
-        const threeSubjects = subjects.slice(0,3);
-        this.setState({ subjects: threeSubjects });
+        this.subjectQueue.unshift(subject);
       })
+      .catch((e) => { console.log("Subject Fetch Error:", e) })
   }
 
   processClassification(classification) {
