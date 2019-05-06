@@ -1,4 +1,5 @@
 import React from "react"
+import Map from "./map"
 import dataStyles from "./data.module.css"
 
 const Data = () => (
@@ -19,6 +20,7 @@ const Data = () => (
       </div>
       <div>
         <h5>Countries participating today</h5>
+        <Map />
       </div>
     </div>
     <div className={dataStyles.buttons}>
