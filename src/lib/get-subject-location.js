@@ -20,6 +20,7 @@ function getSubjectLocation(subject, frame = 0) {
     if (type in READABLE_FORMATS && READABLE_FORMATS[extensions].includes(format)) {
       return type;
     }
+    return null;
   });
   return { type, format, src };
 }

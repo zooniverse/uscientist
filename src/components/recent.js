@@ -17,13 +17,11 @@ const Recent = ({ subjects }) => (
           const location = getSubjectLocation(subject);
           return (
             <div key={i} className={recentStyles.subject}>
-<<<<<<< HEAD
               <div />
               <OutboundLink href="https://www.zooniverse.org">{image}</OutboundLink>
-=======
               <img src={location.src} />
+              <img alt="Recently Classified Galaxy" src={location.src} />
               <span>{subject.id}</span>
->>>>>>> Display Recent Subjects
             </div>
           );
         })}
