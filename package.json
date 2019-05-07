@@ -16,16 +16,16 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-sharp": "^2.1.18",
+    "panoptes-client": "^2.12.1",
     "prop-types": "^15.7.2",
+    "pusher-js": "^4.4.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-ga": "^2.5.7",
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "panoptes-client": "^2.12.1",
-    "prettier": "^1.17.0",
-    "pusher-js": "^4.4.0"
+    "prettier": "^1.17.0"
   },
   "keywords": [
     "gatsby"
