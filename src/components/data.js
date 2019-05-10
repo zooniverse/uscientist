@@ -1,4 +1,5 @@
 import React from "react"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import dataStyles from "./data.module.css"
 
 const Data = () => (
@@ -24,7 +25,7 @@ const Data = () => (
     </div>
     <div className={dataStyles.buttons}>
       <button className='solid-button'>
-        <a href='https://www.galaxyzoo.org'>galaxyzoo.org</a>
+        <OutboundLink href='https://www.galaxyzoo.org'>galaxyzoo.org</OutboundLink>
       </button>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import React from "react"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import callToActionStyles from "./callToAction.module.css"
 
 const CallToAction = () => (
@@ -11,8 +12,10 @@ const CallToAction = () => (
       You can keep science-ing on your mobile device or at home with
       <a className="peach-link" href="https://www.galaxyzoo.org">Galaxy Zoo</a>, a project from Zooniverse. Check it out!
     </span>
-    <div className={callToActionStyles.buttons}>
-      <button className="solid-button"><a href='https://www.galaxyzoo.org'>Galaxyzoo.org</a></button>
+    <div>
+      <button className="solid-button">
+        <OutboundLink href='https://www.galaxyzoo.org'>Galaxyzoo.org</OutboundLink>
+      </button>
     </div>
   </div>
 )

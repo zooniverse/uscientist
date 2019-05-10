@@ -1,5 +1,6 @@
 import React from "react"
 import recentStyles from "./recent.module.css"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const placeholder = ["SBJ.26440667", "SBJ.26440667", "SBJ.26440667"];
 
@@ -20,7 +21,7 @@ const Recent = () => (
         )}
       </div>
       <button className='hollow-button'>
-        <a href='https://www.galaxyzoo.org'>more recent galaxies</a>
+        <OutboundLink href='https://www.galaxyzoo.org'>more recent galaxies</OutboundLink>
       </button>
     </div>
 );

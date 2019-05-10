@@ -1,7 +1,8 @@
 import React from "react"
-import footerStyles from "./footer.module.css"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+import footerStyles from "./footer.module.css"
 
 const Layout = ({ data }) => {
   return (
@@ -12,7 +13,7 @@ const Layout = ({ data }) => {
           <Img fixed={data.file.childImageSharp.fixed} />
           <span>U!Scientist is made possible by a grant from the national science foundation.</span>
           <span>The Zoonivese is a collaboration between the Adler Planetarium, The University of Oxford, The University of Minnesota, and the broader Citizen Science Alliance.</span>
-          <a href="https://zooniverse.org">zooniverse.org</a>
+          <OutboundLink href="https://zooniverse.org">zooniverse.org</OutboundLink>
         </div>
       )}
     />
