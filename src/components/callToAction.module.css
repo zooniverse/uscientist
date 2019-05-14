@@ -37,19 +37,6 @@
   margin-top: 0.75rem;
 }
 
-.callToAction span a {
-  color: #F3AB91;
-  cursor: pointer;
-  display: initial;
-  font-family: 'IBM Plex Mono';
-  font-size: 0.8rem;
-  font-style: italic;
-  font-weight: bold;
-  letter-spacing: 0.8px;
-  margin-left: 0.5rem;
-  text-transform: none;
-}
-
 @media only screen and (max-width: 768px) {
   .buttons {
     display: flex;

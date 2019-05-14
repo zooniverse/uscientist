@@ -5,8 +5,9 @@ const Data = () => (
   <div className={dataStyles.data}>
     <h3 className='sub-header'>Even more data</h3>
     <span className='descriptor'>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna alique. Ut
+      People just like you have been classifying galaxies from U!Scientist at
+      the Adler as well as online on
+      <a href="https://www.galaxyzoo.org" className="peach-link">Galaxy Zoo</a>
     </span>
     <div className={dataStyles.stats}>
       <div>

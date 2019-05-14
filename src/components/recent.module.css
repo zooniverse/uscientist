@@ -1,5 +1,6 @@
 .recent {
   color: red;
+  position: relative;
 }
 
 .recent button {
@@ -35,6 +36,11 @@
   font-size: 16px;
   font-weight: bold;
   text-align: left;
+  text-decoration: none;
+}
+
+.subject a:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 768px) {
@@ -50,26 +56,41 @@
 
   .subjects {
     flex-wrap: wrap;
-    width: 85vw;
   }
 
   .subjects {
-    justify-content: flex-start;
+    justify-content: space-between;
+  }
+
+  .subjects .subject:first-child {
+    margin-bottom: 1rem;
   }
 
   .subjects .subject:first-child div {
-    height: 82vw;
-    width: 82vw;
+    height: 86vw;
+    width: 100%;
   }
 
   .subjects .subject:nth-child(2) div {
-    height: 40vw;
-    width: 40vw;
+    height: 42vw;
+    width: 100%;
   }
 
   .subjects .subject:nth-child(3) div {
-    height: 40vw;
-    width: 40vw;
+    height: 42vw;
+    width: 100%;
+  }
+
+  .subjects > div:first-child {
+    width: 100%;
+  }
+
+  .subjects > div:nth-child(2) {
+    width: 48%;
+  }
+
+  .subjects > div:nth-child(3) {
+    width: 48%;
   }
 
   .subjects .subject:nth-child(3) {
