@@ -1,7 +1,6 @@
 .general {
     align-items: center;
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
 .general h5 {
@@ -18,7 +17,6 @@
   font-family: "IBM Plex Mono";
   font-size: 16px;
   line-height: 24px;
-  margin-bottom: 0.4rem;
 }
 
 .general span:first-child {
@@ -27,12 +25,35 @@
 
 .general button {
   display: block;
-  margin: auto;
+  margin: 1rem auto 0 auto;
 }
 
 .column {
   column-count: 2;
-  margin: 1.5rem 0;
+  padding: 1.5rem 0;
   max-width: 80vw;
-  width: 45rem;
+}
+
+.column span:first-child {
+  margin-bottom: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .general {
+    align-items: flex-start;
+  }
+
+  .column {
+    column-count: 1;
+    padding: 0 2rem 2rem 4rem;
+  }
+
+  .content {
+    flex-direction: row;
+  }
 }

@@ -1,6 +1,8 @@
 .callToAction {
   max-width: 75vw;
+  position: relative;
   width: 34rem;
+  z-index: 1;
 }
 
 .callToAction h1 {
@@ -32,5 +34,35 @@
 }
 
 .callToAction button {
-  margin: 0 1rem 1rem 0;
+  margin-top: 0.75rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .callToAction {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .callToAction h1 {
+    font-size: 60px;
+    max-width: 100%;
+  }
+
+  .callToAction h2 {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 2rem;
+  }
+
+  .callToAction span {
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 0 2rem 2rem;
+  }
 }

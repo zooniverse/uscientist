@@ -5,3 +5,61 @@
   right: 0;
   top: 0;
 }
+
+.spiral-background {
+  margin-top: 80%;
+  position: absolute;
+  right: 0;
+}
+
+.small-star {
+  left: 0;
+  top: 0;
+  margin: 12% 0 0 10%;
+  position: absolute;
+}
+
+.small-star-desktop {
+  margin: 0 10% 2% 0;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.background-star {
+  left: 0;
+  margin-top: 12%;
+  position: absolute;
+}
+
+.icons-image {
+  margin: 0rem auto;
+  width: 20rem;
+}
+
+.icons-image-mobile {
+  display: none;
+  height: max-content;
+  width: 2rem;
+}
+
+.zooniverse-background-image {
+  bottom: 0;
+  left: 0;
+  margin: 0 0 20% 5%;
+  position: absolute;
+}
+
+.background-star-right {
+  display: none;
+  right: 0;
+  margin-top: 5rem;
+  position: absolute;
+}
+
+.background-spiral-left {
+  display: none;
+  left: 0;
+  margin-top: 25rem;
+  position: absolute;
+}

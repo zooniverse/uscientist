@@ -1,0 +1,72 @@
+@media only screen and (max-width: 768px) {
+  .solid-button {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hollow-button {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .large-logo {
+    display: none;
+  }
+
+  .layout-div {
+    padding: 3rem 1.5rem;
+  }
+
+  .spiral-background {
+    height: 10rem;
+    margin-top: 60vh;
+  }
+
+  .small-star {
+    left: -1rem;
+    margin: 0;
+  }
+
+  .background-star {
+    height: 10rem;
+    margin-top: 16rem;
+  }
+
+  .descriptor {
+    font-size: 14px;
+    line-height: 22px;
+    margin-left: 0;
+    text-align: left;
+    max-width: 70vw;
+  }
+
+  .icons-image {
+    display: none;
+  }
+
+  .icons-image-mobile {
+    display: block;
+  }
+
+  .small-star-desktop {
+    display: none;
+  }
+
+  .zooniverse-background-image {
+    margin-bottom: 16rem;
+    left: -7.5rem;
+    width: 15rem;
+  }
+
+  .background-star-right {
+    display: block;
+  }
+
+  .background-spiral-left {
+    display: block;
+  }
+
+  .sub-header {
+    text-align: left;
+  }
+}
