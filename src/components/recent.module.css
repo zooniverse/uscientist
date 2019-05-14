@@ -4,9 +4,7 @@
 
 .recent button {
   display: block;
-  height: 3.5rem;
-  margin: 3rem auto;
-  width: 28rem;
+  margin: 2.5rem auto 0 auto;
 }
 
 .recent button a {
@@ -42,7 +40,6 @@
 @media only screen and (max-width: 768px) {
   .recent h3 {
     text-align: left;
-    margin: 0;
     max-width: 60vw;
   }
 
@@ -77,9 +74,5 @@
 
   .subjects .subject:nth-child(3) {
     margin-left: 2vw;
-  }
-
-  .recent button {
-    margin: 1.5rem auto;
   }
 }

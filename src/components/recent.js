@@ -19,7 +19,7 @@ const Recent = () => (
         )}
       </div>
       <button className='hollow-button'>
-        <a href='https://www.galaxyzoo.org'>see more at galaxyzoo.org</a>
+        <a href='https://www.galaxyzoo.org'>more recent galaxies</a>
       </button>
     </div>
 );

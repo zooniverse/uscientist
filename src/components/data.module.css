@@ -31,11 +31,10 @@
 .buttons {
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
 }
 
-.buttons button {
-  margin: 0 1rem;
+.data button {
+  margin-top: 2.5rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -50,13 +49,5 @@
 
   .buttons {
     flex-direction: column;
-  }
-
-  .buttons button {
-    margin: 0;
-  }
-
-  .buttons button:first-child {
-    margin-bottom: 1rem;
   }
 }

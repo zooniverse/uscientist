@@ -18,7 +18,7 @@ const General = () => (
         from astronomy to zoology.
         </span><br/>
         <span>
-        Scientist need your help to process all shapes of galaxies or
+        Scientists need your help to process all shapes of galaxies or
         identifying animal species. By answering a few questions, you'll
         make a big difference in the scientific community!
         </span>

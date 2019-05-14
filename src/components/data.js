@@ -25,9 +25,6 @@ const Data = () => (
       <button className='solid-button'>
         <a href='https://www.galaxyzoo.org'>galaxyzoo.org</a>
       </button>
-      <button className='hollow-button'>
-        <a href='https://www.zooniverse.org'>share this project</a>
-      </button>
     </div>
   </div>
 )

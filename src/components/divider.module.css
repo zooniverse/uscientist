@@ -3,11 +3,5 @@
 }
 
 .divider div {
-  margin: 4rem auto;
-}
-
-@media only screen and (max-width: 768px) {
-  .divider div {
-    margin: 2rem auto;
-  }
+  margin: 3rem auto;
 }
