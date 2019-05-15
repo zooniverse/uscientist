@@ -11,8 +11,15 @@ const Layout = ({ data }) => {
       render={data => (
         <div className={footerStyles.footer}>
           <Img fixed={data.file.childImageSharp.fixed} />
-          <span>U!Scientist is made possible by a grant from the national science foundation.</span>
-          <span>The Zoonivese is a collaboration between the Adler Planetarium, The University of Oxford, The University of Minnesota, and the broader Citizen Science Alliance.</span>
+          <span>
+            This material is based upon work supported by the national science
+            foundation under grant #AISL-1713425
+          </span>
+          <span>
+            The Zoonivese is a collaboration between the Adler Planetarium, The
+            University of Oxford, The University of Minnesota, and the broader
+            Citizen Science Alliance.
+          </span>
           <OutboundLink href="https://zooniverse.org">zooniverse.org</OutboundLink>
         </div>
       )}
