@@ -10,7 +10,11 @@ const Layout = ({ data }) => {
       query={query}
       render={data => (
         <div className={footerStyles.footer}>
-          <Img fixed={data.file.childImageSharp.fixed} />
+          <div className={footerStyles.logos}>
+            <Img fixed={data.nsf.childImageSharp.fixed} />
+            <div className={footerStyles.separator}/>
+            <Img fixed={data.zooniverse.childImageSharp.fixed} />
+          </div>
           <span>
             This material is based upon work supported by the national science
             foundation under grant #AISL-1713425
@@ -29,9 +33,16 @@ const Layout = ({ data }) => {
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "zooniverse-logo.png" }) {
+    zooniverse: file(relativePath: { eq: "zooniverse-logo.png" }) {
       childImageSharp {
-        fixed(width: 200) {
+        fixed(height: 18) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    nsf: file(relativePath: { eq: "nsf.png" }) {
+      childImageSharp {
+        fixed(height: 35) {
           ...GatsbyImageSharpFixed
         }
       }
