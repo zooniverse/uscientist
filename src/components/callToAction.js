@@ -10,7 +10,8 @@ const CallToAction = () => (
     </h2>
     <span>
       You can keep science-ing on your mobile device or at home with
-      <a className="peach-link" href="https://www.galaxyzoo.org">Galaxy Zoo</a>, a project from Zooniverse. Check it out!
+      <OutboundLink className="peach-link" href="https://www.galaxyzoo.org">Galaxy Zoo</OutboundLink>
+      , a project from Zooniverse. Check it out!
     </span>
     <div>
       <button className="solid-button">

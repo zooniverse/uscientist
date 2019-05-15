@@ -8,7 +8,7 @@ const Data = () => (
     <span className='descriptor'>
       People just like you have been classifying galaxies from U!Scientist at
       the Adler as well as online on
-      <a href="https://www.galaxyzoo.org" className="peach-link">Galaxy Zoo</a>
+      <OutboundLink href="https://www.galaxyzoo.org" className="peach-link">Galaxy Zoo</OutboundLink>
     </span>
     <div className={dataStyles.stats}>
       <div>
