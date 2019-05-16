@@ -1,5 +1,5 @@
 .footer {
-  background: white;
+  background: #EFF2F5;
   height: auto;
   padding: 2rem 4rem;
   text-align: center;
@@ -18,4 +18,24 @@
   margin: 0.75rem 0;
   text-align: center;
   text-transform: uppercase;
+}
+
+.logos {
+  display: inline-flex;
+  margin: 0 auto;
+}
+
+.logos div {
+  margin: auto 0.5rem;
+}
+
+.separator {
+  border-left: 1px solid black;
+  height: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    padding: 2rem;
+  }
 }

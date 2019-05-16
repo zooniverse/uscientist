@@ -6,7 +6,15 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-1224199-64",
+        head: true,
+        anonymize: true,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
           families: ['Poppins:400', 'Poppins:700', 'IBM Plex Mono']

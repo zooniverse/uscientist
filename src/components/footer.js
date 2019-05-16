@@ -1,7 +1,8 @@
 import React from "react"
-import footerStyles from "./footer.module.css"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+import footerStyles from "./footer.module.css"
 
 const Layout = ({ data }) => {
   return (
@@ -9,10 +10,21 @@ const Layout = ({ data }) => {
       query={query}
       render={data => (
         <div className={footerStyles.footer}>
-          <Img fixed={data.file.childImageSharp.fixed} />
-          <span>U!Scientist is made possible by a grant from the national science foundation.</span>
-          <span>The Zoonivese is a collaboration between the Adler Planetarium, The University of Oxford, The University of Minnesota, and the broader Citizen Science Alliance.</span>
-          <a href="https://zooniverse.org">zooniverse.org</a>
+          <div className={footerStyles.logos}>
+            <Img fixed={data.nsf.childImageSharp.fixed} />
+            <div className={footerStyles.separator}/>
+            <Img fixed={data.zooniverse.childImageSharp.fixed} />
+          </div>
+          <span>
+            This material is based upon work supported by the national science
+            foundation under grant #AISL-1713425
+          </span>
+          <span>
+            The Zoonivese is a collaboration between the Adler Planetarium, The
+            University of Oxford, The University of Minnesota, and the broader
+            Citizen Science Alliance.
+          </span>
+          <OutboundLink href="https://zooniverse.org">zooniverse.org</OutboundLink>
         </div>
       )}
     />
@@ -21,9 +33,16 @@ const Layout = ({ data }) => {
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "zooniverse-logo.png" }) {
+    zooniverse: file(relativePath: { eq: "zooniverse-logo.png" }) {
       childImageSharp {
-        fixed(width: 200) {
+        fixed(height: 18) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    nsf: file(relativePath: { eq: "nsf.png" }) {
+      childImageSharp {
+        fixed(height: 35) {
           ...GatsbyImageSharpFixed
         }
       }

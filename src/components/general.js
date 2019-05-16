@@ -1,4 +1,5 @@
 import React from "react"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import generalStyles from "./general.module.css"
 import icons from "../images/icons.png";
 import mobileIcons from "../images/mobile-icons.png";
@@ -26,7 +27,7 @@ const General = () => (
       <img alt="Discipline Icons" className="icons-image-mobile" src={mobileIcons} />
     </div>
     <button className='hollow-button'>
-      <a href='https://www.zooniverse.org'>zooniverse.org</a>
+      <OutboundLink href='https://www.zooniverse.org'>zooniverse.org</OutboundLink>
     </button>
   </div>
 );

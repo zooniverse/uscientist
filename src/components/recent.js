@@ -1,5 +1,6 @@
 import React from "react"
 import recentStyles from "./recent.module.css"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const placeholder = ["SBJ.26440667", "SBJ.26440667", "SBJ.26440667"];
 
@@ -9,18 +10,18 @@ const Recent = () => (
       <span className='descriptor'>
         Check out some of the galaxies that have been classified both on
         U!Scientist at the Adler Planetarium and online on
-        <a className="peach-link" href="https://www.galaxyzoo.org">Galaxy Zoo.</a>
+        <OutboundLink className="peach-link" href="https://www.galaxyzoo.org">Galaxy Zoo.</OutboundLink>
       </span>
       <div className={recentStyles.subjects}>
         {placeholder.map((image, i) =>
             <div key={i} className={recentStyles.subject}>
               <div />
-              <a href="https://www.zooniverse.org">{image}</a>
+              <OutboundLink href="https://www.zooniverse.org">{image}</OutboundLink>
             </div>
         )}
       </div>
       <button className='hollow-button'>
-        <a href='https://www.galaxyzoo.org'>more recent galaxies</a>
+        <OutboundLink href='https://www.galaxyzoo.org'>more recent galaxies</OutboundLink>
       </button>
     </div>
 );
