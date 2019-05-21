@@ -18,7 +18,7 @@ const CallToAction = () => (
         <OutboundLink href='https://www.galaxyzoo.org'>Learn More</OutboundLink>
       </button>
       <button className="hollow-button">
-        <OutboundLink href='https://www.galaxyzoo.org'>Register</OutboundLink>
+        <OutboundLink href='https://www.zooniverse.org/accounts/register'>Register</OutboundLink>
       </button>
     </div>
   </div>
