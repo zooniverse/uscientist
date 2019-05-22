@@ -34,12 +34,16 @@
 }
 
 .callToAction button {
-  margin-top: 0.75rem;
+  margin: 0.75rem 1rem 0 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
 }
 
 @media only screen and (max-width: 768px) {
   .buttons {
-    display: flex;
     flex-direction: column;
   }
 

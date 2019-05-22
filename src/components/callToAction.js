@@ -13,9 +13,12 @@ const CallToAction = () => (
       <OutboundLink className="peach-link" href="https://www.galaxyzoo.org">Galaxy Zoo</OutboundLink>
       , a project from Zooniverse. Check it out!
     </span>
-    <div>
+    <div className={callToActionStyles.buttons}>
       <button className="solid-button">
-        <OutboundLink href='https://www.galaxyzoo.org'>Galaxyzoo.org</OutboundLink>
+        <OutboundLink href='https://www.galaxyzoo.org'>Learn More</OutboundLink>
+      </button>
+      <button className="hollow-button">
+        <OutboundLink href='https://www.zooniverse.org/accounts/register'>Register</OutboundLink>
       </button>
     </div>
   </div>

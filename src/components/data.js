@@ -25,7 +25,10 @@ const Data = () => (
     </div>
     <div className={dataStyles.buttons}>
       <button className='solid-button'>
-        <OutboundLink href='https://www.galaxyzoo.org'>galaxyzoo.org</OutboundLink>
+        <OutboundLink href='https://www.galaxyzoo.org'>Learn More</OutboundLink>
+      </button>
+      <button className='hollow-button'>
+        <OutboundLink href='https://www.zooniverse.org/accounts/register'>Register</OutboundLink>
       </button>
     </div>
   </div>
