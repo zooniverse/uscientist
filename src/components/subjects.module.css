@@ -27,7 +27,7 @@
   border: 1px solid #E1E3E6;
   border-radius: 0.2rem;
   height: 22vw;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
   width: 22vw;
 }
 
@@ -67,17 +67,17 @@
     margin-bottom: 1rem;
   }
 
-  .subjects .subject:first-child div {
+  .subjects .subject:first-child img {
     height: 86vw;
     width: 100%;
   }
 
-  .subjects .subject:nth-child(2) div {
+  .subjects .subject:nth-child(2) img {
     height: 42vw;
     width: 100%;
   }
 
-  .subjects .subject:nth-child(3) div {
+  .subjects .subject:nth-child(3) img {
     height: 42vw;
     width: 100%;
   }
