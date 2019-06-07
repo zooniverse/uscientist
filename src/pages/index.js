@@ -1,12 +1,12 @@
 import React from "react"
+import apiClient from "panoptes-client/lib/api-client"
 import ReactGA from "react-ga"
 import Layout from "../components/layout"
 import CallToAction from "../components/CallToAction"
 import Divider from "../components/divider"
 import General from "../components/general"
+import RecentSubjects from "../containers/RecentSubjects"
 import RecentData from "../containers/RecentData"
-import Recent from "../components/recent"
-import Data from "../components/data"
 import yellowLogo from "../images/yellow-logo.png"
 import spiral from "../images/background-spiral.png"
 import smallStar from "../images/yellow-star.png"
@@ -14,20 +14,27 @@ import backgroundStar from "../images/background-star.png"
 import zooniverseBackground from "../images/zooniverse-logo-white.png"
 import spiralLeft from "../images/spiral-left.png"
 import starRight from "../images/star-right.png"
+import { config } from "../config"
 
 export default class IndexPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      endScroll: false,
       initialScroll: false,
-      endScroll: false
+      project: null
     }
     this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+
+    apiClient.type("projects").get({ id: config.projectID })
+      .then(([project]) => {
+        this.setState({ project });
+      })
   }
 
   componentWillUnmount() {
@@ -53,6 +60,8 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
+    const retiredCount = (this.state.project && this.state.project.retired_subjects_count) || 0;
+
     return (
       <Layout>
         <div className="layout-div">
@@ -62,12 +71,12 @@ export default class IndexPage extends React.Component {
           <img alt="Background Star" className="background-star" src={backgroundStar} />
           <CallToAction />
           <Divider />
-          <Recent />
+          <RecentSubjects project={this.state.project} />
           <Divider />
           <img alt="Zooniverse Background Logo" className="zooniverse-background-image" src={zooniverseBackground} />
           <img alt="Background Star" className="background-star-right" src={starRight} />
           <img alt="Background Spiral" className="background-spiral-left" src={spiralLeft} />
-          <Data />
+          <RecentData retiredCount={retiredCount} />
           <Divider />
           <General />
           <img alt="Small Background Star" className="small-star-desktop" src={smallStar} />

@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { config } from "../config";
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { config } from "../config"
 import subjectStyles from "./subjects.module.css"
 import { getSubjectLocation } from "../lib/get-subject-location"
 
@@ -8,8 +9,9 @@ const Subjects = ({ project, subjects }) => (
     <div className={subjectStyles.container}>
       <h3 className='sub-header'>Recent galaxies</h3>
       <span className='descriptor'>
-        People just like you have been classifying galaxies from U!Scientist at
-        the Adler as well as online on Galaxy Zoo.
+        Check out some of the galaxies that have been classified both on
+        U!Scientist at the Adler Planetarium and online on
+        <OutboundLink className="peach-link" href="https://www.galaxyzoo.org">Galaxy Zoo.</OutboundLink>
       </span>
       <div className={subjectStyles.subjects}>
         {subjects.map((subject, i) => {
@@ -17,19 +19,19 @@ const Subjects = ({ project, subjects }) => (
           return (
             <div key={i} className={subjectStyles.subject}>
               <img alt="Recently Classified Galaxy" src={location.src} />
-              <a
+              <OutboundLink
                 href={`${config.root}projects/${project.slug}/talk/subjects/${subject.id}`}
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 subject ID: {subject.id}
-              </a>
+              </OutboundLink>
             </div>
           );
         })}
       </div>
       <button className='hollow-button'>
-        <a href='https://www.galaxyzoo.org'>see more at galaxyzoo.org</a>
+        <OutboundLink href='https://www.galaxyzoo.org'>More Recent Galaxies</OutboundLink>
       </button>
     </div>
 );
