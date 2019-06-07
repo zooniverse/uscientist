@@ -2,7 +2,7 @@ import React from "react"
 import Pusher from "pusher-js"
 import PropTypes from "prop-types"
 import apiClient from "panoptes-client/lib/api-client"
-import talkClient from 'panoptes-client/lib/talk-client';
+import talkClient from 'panoptes-client/lib/talk-client'
 import Subjects from "../components/subjects"
 import { config } from "../config"
 
