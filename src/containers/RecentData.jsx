@@ -1,84 +1,59 @@
 import React from "react";
 import PropTypes from "prop-types"
-import { GraphQLClient } from 'graphql-request'
 import Data from "../components/data"
-// import { config } from "../config"
-
-export const statsClient = new GraphQLClient('https://graphql-stats.zooniverse.org/graphql', {
-  credentials: 'include',
-  mode: 'cors'
-});
+import statsClient from "panoptes-client/lib/stats-client";
+import { config } from "../config"
 
 class RecentData extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      tableCount: 0,
-      totalDaily: 0
+      totalTableClassifications: 0,
+      totalProjectClassifications: 0
     };
   }
 
   componentDidMount() {
-    // this.setTotalCount();
-    // this.setTableCount();
-    this.fetchGraphQLQuery();
+    this.setTotalCount();
+    this.settotalTableClassifications();
   }
 
-  fetchGraphQLQuery() {
-    const query = `{
-      statsCount(
-        eventType: "classification",
-        interval: "1 Day",
-        projectId: "5733"
-      ){
-        period,
-        count
-      }
-    }`
-
-    statsClient.request(query.replace(/\s+/g, ' '))
-      .then((result) => {
-        console.log(result);
+  setTotalCount() {
+    statsClient
+      .query({
+        projectID: config.projectID,
+        period: "year",
+        type: "classification"
+      })
+      .then((data) => {
+        let totalProjectClassifications = 0;
+        data.map(year => totalProjectClassifications += year.doc_count);
+        this.setState({ totalProjectClassifications });
       })
   }
 
-  // setTotalCount() {
-  //   statsClient
-  //     .query({
-  //       projectID: config.projectID,
-  //       period: "day",
-  //       type: "classification"
-  //     })
-  //     .then((data) => {
-  //       const mostRecentCount = data[data.length - 1];
-  //       if (mostRecentCount && mostRecentCount.doc_count) {
-  //         this.setState({ totalDaily: mostRecentCount.doc_count });
-  //       }
-  //     })
-  // }
-  //
-  // setTableCount() {
-  //   statsClient
-  //     .query({
-  //       workflowID: config.tableWorkflowID,
-  //       period: "day",
-  //       type: "classification"
-  //     })
-  //     .then((data) => {
-  //       const mostRecentCount = data[data.length - 1];
-  //       if (mostRecentCount && mostRecentCount.doc_count) {
-  //         this.setState({ tableCount: mostRecentCount.doc_count });
-  //       }
-  //     })
-  // }
+  settotalTableClassifications() {
+    statsClient
+      .query({
+        workflowID: config.tableWorkflowID,
+        period: "day",
+        type: "classification"
+      })
+      .then((data) => {
+        const mostRecentCount = data[data.length - 1];
+        if (mostRecentCount && mostRecentCount.doc_count) {
+          this.setState({ totalTableClassifications: mostRecentCount.doc_count });
+        }
+      })
+  }
 
   render() {
     return (
       <Data
         retiredCount={this.props.retiredCount}
-        tableCount={this.state.tableCount}
-        totalDaily={this.state.totalDaily}
+        totalTableClassifications={this.state.totalTableClassifications}
+        totalProjectClassifications={this.state.totalProjectClassifications}
       />
     );
   }

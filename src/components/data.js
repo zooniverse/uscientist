@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Map from "./map"
 import dataStyles from "./data.module.css"
 
-const Data = ({ retiredCount, tableCount, totalDaily }) => (
+const Data = ({ retiredCount, totalTableClassifications, totalProjectClassifications }) => (
   <div className={dataStyles.data}>
     <h3 className='sub-header'>Even more data</h3>
     <span className='descriptor'>
@@ -14,12 +14,12 @@ const Data = ({ retiredCount, tableCount, totalDaily }) => (
     </span>
     <div className={dataStyles.stats}>
       <div>
-        <h5>total classifications today</h5>
-        <span>{totalDaily.toLocaleString()}</span>
-        <h5>galaxies retired</h5>
+        <h5>All-Time U!Scientist Classifications</h5>
+        <span>{totalTableClassifications.toLocaleString()}</span>
+        <h5>All-Time Classifications From Galaxy Zoo</h5>
+        <span>{totalProjectClassifications.toLocaleString()}</span>
+        <h5>All-Time Completed Galaxies</h5>
         <span>{retiredCount.toLocaleString()}</span>
-        <h5>u!scientist classifications today</h5>
-        <span>{tableCount.toLocaleString()}</span>
       </div>
       <div>
         <h5>Countries participating currently</h5>
@@ -39,14 +39,14 @@ const Data = ({ retiredCount, tableCount, totalDaily }) => (
 
 Data.defaultProps = {
   retiredCount: 0,
-  tableCount: 0,
-  totalDaily: 0
+  totalTableClassifications: 0,
+  totalProjectClassifications: 0
 }
 
 Data.propTypes = {
   retiredCount: PropTypes.number,
-  tableCount: PropTypes.number,
-  totalDaily: PropTypes.number
+  totalTableClassifications: PropTypes.number,
+  totalProjectClassifications: PropTypes.number
 }
 
 export default Data;

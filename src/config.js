@@ -20,7 +20,7 @@ const baseConfig = {
   production: {
     root: "https://www.zooniverse.org/",
     projectID: "5733",
-    tableWorkflowID: "6527"
+    tableWorkflowID: "11308"
   }
 }
 
