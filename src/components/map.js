@@ -22,8 +22,7 @@ class Map extends Component {
     this.state = {
       recentlyClassifiedCountries: []
     }
-    this.map = null;
-
+    this.matchingCountries = this.matchingCountries.bind(this);
     this.processClassification = this.processClassification.bind(this);
     this.renderCountry = this.renderCountry.bind(this);
   }
@@ -35,42 +34,47 @@ class Map extends Component {
   }
 
   processClassification(classification) {
-    const location = classification.geo.country_name;
-    if (location === "") {
-      return null;
-    }
-    const recentlyClassifiedCountries = [...this.state.recentlyClassifiedCountries];
+    if (classification.project_id === config.projectID) {
+      const location = classification.geo.country_name;
+      if (location === "") return null;
+      const recentlyClassifiedCountries = [...this.state.recentlyClassifiedCountries];
 
-    if (recentlyClassifiedCountries.indexOf(location) < 0) {
-      recentlyClassifiedCountries.push(location);
-      this.setState({ recentlyClassifiedCountries });
-      this.map.forceUpdate();
+      if (recentlyClassifiedCountries.indexOf(location) < 0) {
+        recentlyClassifiedCountries.push(location);
+        this.setState({ recentlyClassifiedCountries });
+      }
     }
   }
 
-  renderCountry(country, projection) {
-    console.log("rendering country");
+  // Alleviates some discrepencies between Pusher and TopoJSON country names
+  // Eg. "United States" vs "United States of America"
+  matchingCountries(location) {
+    return this.state.recentlyClassifiedCountries.some((country) => {
+      return location.indexOf(country) >= 0 || (country.indexOf(location) >= 0);
+    })
+  }
+
+  renderCountry(country, projection, i) {
     const countryName = country.properties.SOVEREIGNT;
-    const fillColor = this.state.recentlyClassifiedCountries.indexOf(countryName) >= 0 ?
+    const fillColor = this.matchingCountries(countryName) ?
       "#E0FF3D" : "#001133";
+    const style = {
+      fill: fillColor,
+      stroke: "#E0FF3D",
+      strokeWidth: 0.75,
+      transition: "fill 1s ease-in-out",
+      outline: "none",
+    }
 
     return (
       <Geography
+        key={i}
         geography={country}
         projection={projection}
         style={{
-          default: {
-            fill: fillColor,
-            stroke: "#E0FF3D",
-            strokeWidth: 0.75,
-            outline: "none",
-          },
-          hover: {
-            fill: fillColor,
-            stroke: "#E0FF3D",
-            strokeWidth: 0.75,
-            outline: "none",
-          },
+          default: style,
+          hover: style,
+          pressed: style
         }}
       />
     )
@@ -92,9 +96,9 @@ class Map extends Component {
           }}
           >
           <ZoomableGroup center={[0,20]} disablePanning>
-            <Geographies ref={m => (this.map = m)} geography={countries}>
-              {(geographies, projection) => geographies.map(geography => (
-                this.renderCountry(geography, projection)
+            <Geographies disableOptimization geography={countries}>
+              {(geographies, projection) => geographies.map((geography, i) => (
+                this.renderCountry(geography, projection, i)
               ))}
             </Geographies>
           </ZoomableGroup>

@@ -22,7 +22,7 @@ const Data = ({ retiredCount, tableCount, totalDaily }) => (
         <span>{tableCount.toLocaleString()}</span>
       </div>
       <div>
-        <h5>Countries participating today</h5>
+        <h5>Countries participating currently</h5>
         <Map />
       </div>
     </div>
