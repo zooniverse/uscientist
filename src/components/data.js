@@ -1,6 +1,7 @@
 import React from "react"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 import PropTypes from "prop-types"
+import Map from "./map"
 import dataStyles from "./data.module.css"
 
 const Data = ({ retiredCount, tableCount, totalDaily }) => (
@@ -22,6 +23,7 @@ const Data = ({ retiredCount, tableCount, totalDaily }) => (
       </div>
       <div>
         <h5>Countries participating today</h5>
+        <Map />
       </div>
     </div>
     <div className={dataStyles.buttons}>
