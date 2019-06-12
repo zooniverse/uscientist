@@ -19,33 +19,23 @@ class RecentData extends React.Component {
     this.settotalTableClassifications();
   }
 
-  setTotalCount() {
-    statsClient
-      .query({
-        projectID: config.projectID,
-        period: "year",
-        type: "classification"
-      })
+  getTotalCount(query) {
+    return statsClient.query(query)
       .then((data) => {
-        let totalProjectClassifications = 0;
-        data.map(year => totalProjectClassifications += year.doc_count);
-        this.setState({ totalProjectClassifications });
+        let classificationCount = 0;
+        data.map(year => classificationCount += year.doc_count);
+        return classificationCount;
       })
   }
 
+  setTotalCount() {
+    const query = { projectID: config.projectID, period: "year", type: "classification"};
+    this.getTotalCount(query).then(totalProjectClassifications => this.setState({ totalProjectClassifications }));
+  }
+
   settotalTableClassifications() {
-    statsClient
-      .query({
-        workflowID: config.tableWorkflowID,
-        period: "day",
-        type: "classification"
-      })
-      .then((data) => {
-        const mostRecentCount = data[data.length - 1];
-        if (mostRecentCount && mostRecentCount.doc_count) {
-          this.setState({ totalTableClassifications: mostRecentCount.doc_count });
-        }
-      })
+    const query = { workflowID: config.tableWorkflowID, period: "year", type: "classification"};
+    this.getTotalCount(query).then(totalTableClassifications => this.setState({ totalTableClassifications }));
   }
 
   render() {
