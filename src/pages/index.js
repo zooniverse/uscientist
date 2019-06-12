@@ -21,8 +21,6 @@ export default class IndexPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.node = null;
-
     this.state = {
       endScroll: false,
       initialScroll: false,
