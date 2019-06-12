@@ -41,6 +41,7 @@ class RecentData extends React.Component {
   render() {
     return (
       <Data
+        newestClassification={this.props.newestClassification}
         retiredCount={this.props.retiredCount}
         totalTableClassifications={this.state.totalTableClassifications}
         totalProjectClassifications={this.state.totalProjectClassifications}
@@ -50,10 +51,12 @@ class RecentData extends React.Component {
 }
 
 RecentData.defaultProps = {
+  newestClassification: null,
   retiredCount: 0
 }
 
 RecentData.propTypes = {
+  newestClassification: PropTypes.shape(),
   retiredCount: PropTypes.number
 }
 

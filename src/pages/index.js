@@ -1,6 +1,7 @@
 import React from "react"
 import apiClient from "panoptes-client/lib/api-client"
 import ReactGA from "react-ga"
+import Pusher from "pusher-js"
 import Layout from "../components/layout"
 import CallToAction from "../components/CallToAction"
 import Divider from "../components/divider"
@@ -20,12 +21,16 @@ export default class IndexPage extends React.Component {
   constructor(props) {
     super(props);
 
+    this.node = null;
+
     this.state = {
       endScroll: false,
       initialScroll: false,
+      newestClassification: null,
       project: null
     }
     this.handleScroll = this.handleScroll.bind(this);
+    this.processClassification = this.processClassification.bind(this);
   }
 
   componentDidMount() {
@@ -35,10 +40,20 @@ export default class IndexPage extends React.Component {
       .then(([project]) => {
         this.setState({ project });
       })
+
+    const pusher = new Pusher('79e8e05ea522377ba6db', {encrypted: true});
+    const channel = pusher.subscribe('panoptes');
+    channel.bind('classification', this.processClassification);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  processClassification(classification) {
+    if (classification.project_id === config.projectID) {
+      this.setState({ newestClassification: classification });
+    }
   }
 
   logToGA(category, action) {
@@ -71,12 +86,12 @@ export default class IndexPage extends React.Component {
           <img alt="Background Star" className="background-star" src={backgroundStar} />
           <CallToAction />
           <Divider />
-          <RecentSubjects project={this.state.project} />
+          <RecentSubjects newestClassification={this.state.newestClassification} project={this.state.project} />
           <Divider />
           <img alt="Zooniverse Background Logo" className="zooniverse-background-image" src={zooniverseBackground} />
           <img alt="Background Star" className="background-star-right" src={starRight} />
           <img alt="Background Spiral" className="background-spiral-left" src={spiralLeft} />
-          <RecentData retiredCount={retiredCount} />
+          <RecentData newestClassification={this.state.newestClassification} retiredCount={retiredCount} />
           <Divider />
           <General />
           <img alt="Small Background Star" className="small-star-desktop" src={smallStar} />

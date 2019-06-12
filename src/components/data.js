@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Map from "./map"
 import dataStyles from "./data.module.css"
 
-const Data = ({ retiredCount, totalTableClassifications, totalProjectClassifications }) => (
+const Data = ({ newestClassification, retiredCount, totalTableClassifications, totalProjectClassifications }) => (
   <div className={dataStyles.data}>
     <h3 className='sub-header'>Even more data</h3>
     <span className='descriptor'>
@@ -23,7 +23,7 @@ const Data = ({ retiredCount, totalTableClassifications, totalProjectClassificat
       </div>
       <div>
         <h5>Countries participating currently</h5>
-        <Map />
+        <Map newestClassification={newestClassification} />
       </div>
     </div>
     <div className={dataStyles.buttons}>
@@ -38,12 +38,14 @@ const Data = ({ retiredCount, totalTableClassifications, totalProjectClassificat
 )
 
 Data.defaultProps = {
+  newestClassification: null,
   retiredCount: 0,
   totalTableClassifications: 0,
   totalProjectClassifications: 0
 }
 
 Data.propTypes = {
+  newestClassification: PropTypes.shape(),
   retiredCount: PropTypes.number,
   totalTableClassifications: PropTypes.number,
   totalProjectClassifications: PropTypes.number

@@ -5,15 +5,15 @@ import {
   Geographies,
   Geography,
 } from "react-simple-maps"
-import Pusher from "pusher-js"
+import PropTypes from "prop-types"
 import countries from "../lib/countries.json"
 import { config } from "../config"
 
 const wrapperStyles = {
-width: "100%",
-maxWidth: 980,
-margin: "0 auto",
-}
+  width: "100%",
+  maxWidth: 980,
+  margin: "0 auto",
+};
 
 class Map extends Component {
   constructor(props) {
@@ -22,15 +22,16 @@ class Map extends Component {
     this.state = {
       recentlyClassifiedCountries: []
     }
+
     this.matchingCountries = this.matchingCountries.bind(this);
     this.processClassification = this.processClassification.bind(this);
     this.renderCountry = this.renderCountry.bind(this);
   }
 
-  componentDidMount() {
-    const pusher = new Pusher('79e8e05ea522377ba6db', {encrypted: true});
-    const channel = pusher.subscribe('panoptes');
-    channel.bind('classification', this.processClassification);
+  componentWillReceiveProps(next) {
+    if (this.props.newestClassification !== next.newestClassification) {
+      this.processClassification(next.newestClassification);
+    }
   }
 
   processClassification(classification) {
@@ -106,6 +107,19 @@ class Map extends Component {
       </div>
     )
   }
+}
+
+Map.defaultProps = {
+  newestClassification: null
+}
+
+Map.propTypes = {
+  newestClassification: PropTypes.shape({
+    geo: PropTypes.shape({
+      country_name: PropTypes.string
+    }),
+    project_id: PropTypes.string
+  }),
 }
 
 export default Map
