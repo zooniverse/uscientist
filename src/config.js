@@ -5,6 +5,7 @@ const env = envFromBrowser || envFromShell || DEFAULT_ENV;
 
 function locationMatch(regex) {
   var match;
+  if (typeof window == 'undefined') return null;
   if (typeof window.location !== 'undefined' && window.location !== null) {
     match = window.location.search.match(regex);
   }

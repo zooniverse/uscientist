@@ -23,7 +23,7 @@ class RecentSubjects extends React.Component {
   }
 
   componentWillReceiveProps(next) {
-    if (this.props.newestClassification != next.newestClassification) {
+    if (this.props.newestClassification !== next.newestClassification) {
       this.getSubject(next.newestClassification.subject_ids[0])
     }
   }
