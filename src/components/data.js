@@ -1,8 +1,10 @@
 import React from "react"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
+import PropTypes from "prop-types"
+import Map from "./map"
 import dataStyles from "./data.module.css"
 
-const Data = () => (
+const Data = ({ newestClassification, retiredCount, totalTableClassifications, totalProjectClassifications }) => (
   <div className={dataStyles.data}>
     <h3 className='sub-header'>Even more data</h3>
     <span className='descriptor'>
@@ -12,15 +14,16 @@ const Data = () => (
     </span>
     <div className={dataStyles.stats}>
       <div>
-        <h5>total classifications today</h5>
-        <span>42,629</span>
-        <h5>galaxies retired</h5>
-        <span>20</span>
-        <h5>u!scientist classifications today</h5>
-        <span>12,054</span>
+        <h5>All-Time U!Scientist Classifications</h5>
+        <span>{totalTableClassifications.toLocaleString()}</span>
+        <h5>All-Time Classifications From Galaxy Zoo</h5>
+        <span>{totalProjectClassifications.toLocaleString()}</span>
+        <h5>All-Time Completed Galaxies</h5>
+        <span>{retiredCount.toLocaleString()}</span>
       </div>
       <div>
-        <h5>Countries participating today</h5>
+        <h5>Countries participating currently</h5>
+        <Map newestClassification={newestClassification} />
       </div>
     </div>
     <div className={dataStyles.buttons}>
@@ -33,5 +36,19 @@ const Data = () => (
     </div>
   </div>
 )
+
+Data.defaultProps = {
+  newestClassification: null,
+  retiredCount: 0,
+  totalTableClassifications: 0,
+  totalProjectClassifications: 0
+}
+
+Data.propTypes = {
+  newestClassification: PropTypes.shape(),
+  retiredCount: PropTypes.number,
+  totalTableClassifications: PropTypes.number,
+  totalProjectClassifications: PropTypes.number
+}
 
 export default Data;

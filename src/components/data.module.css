@@ -40,7 +40,7 @@
 
 @media only screen and (max-width: 768px) {
   .data h3 {
-    max-width: 60vw;
+    max-width: 75vw;
     text-align: left;
   }
 
@@ -55,5 +55,9 @@
   .buttons button {
     margin: 0.75rem 0 0 0;
     width: 100%;
+  }
+
+  .stats span {
+    font-size: 50px;
   }
 }

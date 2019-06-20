@@ -13,7 +13,7 @@
 }
 
 .general span {
-  color: #E0FF3D;
+  color: #FFFFFF;
   font-family: "IBM Plex Mono";
   font-size: 16px;
   line-height: 24px;
@@ -50,7 +50,7 @@
 
   .column {
     column-count: 1;
-    padding: 0 2rem 2rem 4rem;
+    padding: 0 2rem 2rem 2rem;
   }
 
   .content {
