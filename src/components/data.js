@@ -10,7 +10,7 @@ const Data = ({ newestClassification, retiredCount, totalTableClassifications, t
     <span className='descriptor'>
       People just like you have been classifying galaxies from U!Scientist at
       the Adler as well as online on
-      <OutboundLink href="https://www.galaxyzoo.org" className="peach-link">Galaxy Zoo</OutboundLink>
+      <OutboundLink href="https://www.galaxyzoo.org" className="peach-link">Galaxy Zoo.</OutboundLink>
     </span>
     <div className={dataStyles.stats}>
       <div>
