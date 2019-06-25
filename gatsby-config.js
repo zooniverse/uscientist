@@ -17,7 +17,7 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ['Poppins:400', 'Poppins:700', 'IBM Plex Mono']
+          families: ['Poppins:400,700', 'IBM Plex Mono:400,400italic']
         }
       }
     },

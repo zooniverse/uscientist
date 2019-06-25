@@ -19,23 +19,21 @@
   line-height: 24px;
 }
 
-.general span:first-child {
-  display: inline-block;
-}
-
 .general button {
   display: block;
   margin: 1rem auto 0 auto;
 }
 
 .column {
-  column-count: 2;
+  display: flex;
+  flex-direction: row;
   padding: 1.5rem 0;
   max-width: 80vw;
 }
 
-.column span:first-child {
-  margin-bottom: 2rem;
+.column span {
+  margin: 0 1rem;
+  width: 50%;
 }
 
 .content {
@@ -49,8 +47,13 @@
   }
 
   .column {
-    column-count: 1;
-    padding: 0 2rem 2rem 2rem;
+    flex-direction: column;
+    padding: 0 3rem 2rem 2rem;
+  }
+
+  .column span {
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    width: 100%;
   }
 
   .content {
