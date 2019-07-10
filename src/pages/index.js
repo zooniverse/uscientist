@@ -17,6 +17,8 @@ import spiralLeft from "../images/spiral-left.png"
 import starRight from "../images/star-right.png"
 import { config } from "../config"
 
+const GZ_HISTORICAL_RETIREMENT_COUNT = 1569679;
+
 export default class IndexPage extends React.Component {
   constructor(props) {
     super(props);
@@ -73,7 +75,8 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
-    const retiredCount = (this.state.project && this.state.project.retired_subjects_count) || 0;
+    const baseRetiredCount = (this.state.project && this.state.project.retired_subjects_count) || 0;
+    const retiredCount = baseRetiredCount + GZ_HISTORICAL_RETIREMENT_COUNT;
 
     return (
       <Layout>
