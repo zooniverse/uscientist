@@ -19,6 +19,13 @@ class RecentData extends React.Component {
     this.settotalTableClassifications();
   }
 
+  componentWillReceiveProps(next) {
+    if (this.props.newestClassification !== next.newestClassification
+      && next.newestClassification.workflow_id === config.tableWorkflowID) {
+      this.setState({ totalTableClassifications: this.state.totalTableClassifications + 1 });
+    }
+  }
+
   getTotalCount(query) {
     return statsClient.query(query)
       .then((data) => {
